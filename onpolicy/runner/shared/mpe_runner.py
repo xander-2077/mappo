@@ -122,6 +122,7 @@ class MPERunner(Runner):
 
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
 
+    # Insert to buffer
     def insert(self, data):
         obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
 

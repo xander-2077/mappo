@@ -24,8 +24,11 @@ class R_Actor(nn.Module):
         self._gain = args.gain
         self._use_orthogonal = args.use_orthogonal
         self._use_policy_active_masks = args.use_policy_active_masks
+
+        # MAPPO for False, rMAPPO for True
         self._use_naive_recurrent_policy = args.use_naive_recurrent_policy
         self._use_recurrent_policy = args.use_recurrent_policy
+
         self._recurrent_N = args.recurrent_N
         self.tpdv = dict(dtype=torch.float32, device=device)
 

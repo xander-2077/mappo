@@ -146,9 +146,11 @@ class Runner(object):
             self.policy.save(self.save_dir, episode)
         else:
             policy_actor = self.trainer.policy.actor
-            torch.save(policy_actor.state_dict(), str(self.save_dir) + "/actor.pt")
+            # torch.save(policy_actor.state_dict(), str(self.save_dir) + "/actor.pt")
+            torch.save(policy_actor, str(self.save_dir) + "/actor.pt")
             policy_critic = self.trainer.policy.critic
-            torch.save(policy_critic.state_dict(), str(self.save_dir) + "/critic.pt")
+            # torch.save(policy_critic.state_dict(), str(self.save_dir) + "/critic.pt")
+            torch.save(policy_critic, str(self.save_dir) + "/critic.pt")
 
     def restore(self, model_dir):
         """Restore policy's networks from a saved model."""

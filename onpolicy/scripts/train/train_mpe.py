@@ -98,11 +98,13 @@ def main(args):
     # run dir
     run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
                    0] + "/results") / all_args.env_name / all_args.scenario_name / all_args.algorithm_name / all_args.experiment_name
+    run_dir = Path('/home/lynxi/Codes/mappo/onpolicy/lynxi/results') / all_args.env_name / all_args.scenario_name / all_args.algorithm_name / all_args.experiment_name
     if not run_dir.exists():
         os.makedirs(str(run_dir))
 
     # wandb
-    if all_args.use_wandb:
+    # if all_args.use_wandb:
+    if False:    
         run = wandb.init(config=all_args,
                          project=all_args.env_name,
                          entity=all_args.user_name,
